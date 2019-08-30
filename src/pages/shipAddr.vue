@@ -7,7 +7,7 @@
       <p>请选择您所在的城市</p>
     </div>
     <div class="select-content">
-      <van-cell v-for="(item,i) in list" :key="i" is-link @touchstart.stop.prevent="selectCity(item)">
+      <van-cell v-for="(item,i) in list" :key="i" is-link @touchstart.native.stop.prevent="selectCity(item)">
         <template slot="title">
           <span class="custom-title">{{item.city}}</span>
           <span>{{item.py}}</span>
@@ -51,7 +51,6 @@ export default {
   },
   methods: {
     selectCity(item) {
-      console.log(item);
       this.$router.push({
         name: "home",
         params: item
