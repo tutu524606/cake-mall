@@ -1,19 +1,23 @@
 <template>
-    <header class="header">
-        <van-row>
-        <van-col span="8">
-            <van-icon name="location-o" />
-            <span>配送至</span>
-        </van-col>
-        <van-col span="8" class="logo">
-            <img :src="logoData" alt="">
-        </van-col>
-        <van-col span="8" class="header-right">
-            <span><van-icon name="search" /></span>
-            <span><van-icon name="coupon-o" /></span>
-        </van-col>
-        </van-row>
-    </header>
+  <header class="header">
+    <van-row>
+      <van-col span="8">
+        <van-icon name="location-o" />
+        <span>配送至</span>
+      </van-col>
+      <van-col span="8" class="logo">
+        <img :src="logoData" alt />
+      </van-col>
+      <van-col span="8" class="header-right">
+        <span>
+          <van-icon name="search" />
+        </span>
+        <span>
+          <van-icon name="coupon-o" />
+        </span>
+      </van-col>
+    </van-row>
+  </header>
 </template>
 <script>
 export default {
@@ -52,15 +56,17 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 999;
   width: 100%;
+  background-color: #fff;
   .van-row {
     .van-col:nth-child(1) {
+      color: #c6c6c6;
       //   display: table;
       i,
       span {
         vertical-align: middle;
         display: table-cell;
-        color: rgba(183, 183, 183);
         font-size: 0.17rem;
       }
       i {

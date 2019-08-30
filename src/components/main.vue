@@ -1,9 +1,9 @@
 <template>
-    <div class="main">
-        <Header></Header>
-        <Container></Container>
-        <Footer></Footer>
-    </div>
+  <div class="main">
+    <Header></Header>
+    <Container></Container>
+    <Footer></Footer>
+  </div>
 </template>
 <script>
 import Header from "./header";
@@ -17,6 +17,14 @@ export default {
     Header,
     Container,
     Footer
+  },
+  watch: {
+    $route: {
+      deep: true,
+      handler(value) {
+        console.log(value, "111");
+      }
+    }
   }
 };
 </script>
