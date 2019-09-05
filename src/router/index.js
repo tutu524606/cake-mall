@@ -14,6 +14,15 @@ const router = new Router({
 //  判断是否需要登录权限 以及是否登录
 router.beforeEach((to, from, next) => {
     NProgress.start();
+    // if (!window.sessionStorage.getItem('currentCity') && from.path == '/') {
+    //     next({
+    //         path: '/shipAddr'
+    //     })
+    // } else {
+    //     next({
+    //         path: '/home'
+    //     });
+    // }
     next();
     NProgress.done();
 });

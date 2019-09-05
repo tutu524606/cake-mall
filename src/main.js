@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
+    // 引入vuex
+import store from './store/index'
 
 // 引入vant
 import Vant from 'vant'
@@ -36,6 +38,7 @@ Vue.use(http);
 new Vue({
     el: '#app',
     router,
+    store,
     components: { App },
     template: '<App/>'
 })

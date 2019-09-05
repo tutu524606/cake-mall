@@ -7,7 +7,7 @@
       <p>请选择您所在的城市</p>
     </div>
     <div class="select-content">
-      <van-cell v-for="(item,i) in list" :key="i" is-link @touchstart.native.stop.prevent="selectCity(item)">
+      <van-cell v-for="(item,i) in list" :key="i" is-link @touchstart.native.stop.prevent="selectCity(item)" :class="currentCity ? (item.id == currentCity.id ? 'on' : '') : ''">
         <template slot="title">
           <span class="custom-title">{{item.city}}</span>
           <span>{{item.py}}</span>
@@ -21,6 +21,7 @@
   </section>
 </template>
 <script>
+import { mapActions, mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -49,12 +50,27 @@ export default {
       morePic: require("../../static/images/address_more.png")
     };
   },
+  computed: {
+    currentCity() {
+      return this.$store.state.home.currentCity;
+    }
+  },
+  mounted() {
+    // if (window.sessionStorage.getItem("currentCity"))
+    //   this.currentCity = JSON.parse(
+    //     window.sessionStorage.getItem("currentCity")
+    //   );
+  },
   methods: {
+    ...mapActions(["changeCity"]),
+    // ...mapMutations(["changeCity"]),
     selectCity(item) {
       this.$router.push({
         name: "home",
         params: item
       });
+      // this.$store.dispatch("changeCity", item);
+      this.changeCity(item);
     }
   },
   beforeDestroy() {
@@ -109,6 +125,11 @@ export default {
     }
     .van-cell.on {
       background: -webkit-linear-gradient(top, #ffdb5d, #ffcd21);
+      .van-cell__title {
+        span:last-child {
+          color: #000;
+        }
+      }
     }
     .van-cell::after {
       border: none;

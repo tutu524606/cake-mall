@@ -20,7 +20,6 @@ const childRouters = [{
         path: "/",
         name: "in",
         component: resolve => require(["@/components/main"], resolve),
-        redirect: '/shipAddr',
         children: children,
         meta: {
             title: "入口文件"

@@ -1,14 +1,14 @@
 <template>
   <header class="header">
     <van-row>
-      <van-col span="8">
+      <van-col span="8" @touchstart.native.stop="backToSelectCity">
         <van-icon name="location-o" />
-        <span>配送至</span>
+        <span>{{currentCity ? currentCity.city : '配送至'}}</span>
       </van-col>
       <van-col span="8" class="logo">
         <img :src="logoData" alt />
       </van-col>
-      <van-col span="8" class="header-right">
+      <van-col span="8" class="header-right" v-if="$route.path != '/shipAddr'">
         <span>
           <van-icon name="search" />
         </span>
@@ -25,6 +25,11 @@ export default {
     return {
       logoData: ""
     };
+  },
+  computed: {
+    currentCity() {
+      return this.$store.state.home.currentCity;
+    }
   },
   mounted() {
     if (!window.sessionStorage.getItem("logoData")) this.getLogoData();
@@ -43,6 +48,16 @@ export default {
           );
         }
       });
+    },
+    backToSelectCity() {
+      this.$router.push({
+        path: "/shipAddr"
+      });
+    }
+  },
+  watch: {
+    currentCity(value) {
+      console.log(value, "监听");
     }
   }
 };
@@ -59,6 +74,7 @@ export default {
   z-index: 999;
   width: 100%;
   background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   .van-row {
     .van-col:nth-child(1) {
       color: #c6c6c6;

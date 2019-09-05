@@ -1,12 +1,18 @@
 export default {
     state: {
         // 每日推荐列表-列表类型
-        goodsProducttype: 1
+        currentCity: ''
     },
     mutations: {
         // 列表类型
-        GOODS_PRODUCTTYPE(state, active) {
-            state.goodsProducttype = active
+        changeCity(state, city) {
+            state.currentCity = city;
+            window.sessionStorage.setItem('currentCity', JSON.stringify(city));
+        }
+    },
+    actions: {
+        changeCity(context, city) {
+            context.commit('changeCity', city);
         }
     }
 }
