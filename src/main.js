@@ -16,6 +16,12 @@ Vue.use(Vant)
 import { Icon } from 'vant';
 Vue.use(Icon);
 
+// 引入elementUI的loading
+import ElementUI from 'element-ui'
+Vue.use(ElementUI, {
+    size: 'small',
+    zIndex: 3000
+});
 // 引入懒加载lazyload
 import VueLazyLoad from 'vue-lazyload'
 Vue.use(VueLazyLoad, {

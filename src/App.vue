@@ -15,8 +15,9 @@ export default {
 @import "./assets/css/reset.css";
 @import "./assets/css/base.less";
 #app {
-  font-family: "Microsoft Yahei", "Avenir", Helvetica, Arial, sans-serif;
+  // font-family: "Microsoft Yahei", "Avenir", Helvetica, Arial, sans-serif;
   // font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.16rem;

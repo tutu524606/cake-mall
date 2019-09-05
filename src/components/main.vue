@@ -3,12 +3,14 @@
     <Header></Header>
     <Container></Container>
     <Footer></Footer>
+    <Choice></Choice>
   </div>
 </template>
 <script>
 import Header from "./header";
 import Container from "./container";
 import Footer from "./footer";
+import Choice from "../pages/choice";
 import { mapActions } from "vuex";
 export default {
   data() {
@@ -24,7 +26,8 @@ export default {
   components: {
     Header,
     Container,
-    Footer
+    Footer,
+    Choice
   },
   methods: {
     ...mapActions(["changeCity"])
@@ -33,7 +36,7 @@ export default {
     $route: {
       deep: true,
       handler(value) {
-        console.log(value, "111");
+        // console.log(value, "111");
       }
     }
   }

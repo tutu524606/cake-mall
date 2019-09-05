@@ -14,14 +14,23 @@
                 lazy-load
                 :src="item.imgUrl"
               />
-　　　　　　    <figcaption> html5语义化标签</figcaption>
+　　　　　　    <figcaption>
+                <van-row>
+                <van-col span="18">
+                    <div><span>{{item.goodName}}</span><span>{{item.mark}}</span></div>
+                    <div>{{item.englishDes}}</div>
+                </van-col>
+                <van-col span="6"><van-icon name="cart-o" /></van-col>
+                </van-row>
+                <div class="price"><span>￥</span><span>{{item.price}}</span></div>
+              </figcaption>
   　　      </figure>
         </van-list>
   </van-pull-refresh>
     </section>
 </template>
 <script>
-import { Image } from "vant";
+import { Row, Col, Image, Toast } from "vant";
 import { PullRefresh } from "vant";
 export default {
   data() {
@@ -143,13 +152,28 @@ export default {
       ],
       isLoading: false,
       finished: false,
-      loading: false
+      loading: false,
+      toast: ""
     };
   },
   components: {},
   computed: {},
   mounted() {
+    this.goodsList = [...this.goodsList, ...this.goodsList];
     this.list = this.list.concat(this.goodsList.slice(0, 6));
+    Promise.resolve()
+      .then(() => {
+        this.toast = Toast.loading({
+          mask: true,
+          message: "加载中...",
+          duration: 0
+        });
+      })
+      .then(() => {
+        setTimeout(() => {
+          this.toast.clear();
+        }, 1000);
+      });
   },
   methods: {
     onRefresh() {
@@ -162,6 +186,8 @@ export default {
         );
         // 加载状态结束
         this.loading = false;
+        // this.toast.clear();
+        // Toast.clear();
         // 数据全部加载完成
         if (this.list.length >= this.goodsList.length) {
           this.finished = true;
@@ -200,6 +226,41 @@ export default {
           padding: 0.05rem;
           .van-image {
             width: 100%;
+          }
+          .van-col--18 {
+            text-align: left;
+            font-size: 0.12rem;
+            > div:nth-child(1) {
+              span:nth-child(1) {
+                line-height: 0.3rem;
+                /* font-size: 0.14rem; */
+                margin-right: 0.05rem;
+                font-weight: bolder;
+              }
+              span:nth-child(2) {
+                background: yellow;
+                padding: 0rem 0.05rem;
+              }
+            }
+          }
+          .van-col--6 {
+            i {
+              background: yellow;
+              border-radius: 100%;
+              padding: 0.08rem;
+              color: #333;
+              margin-top: 0.06rem;
+              margin-right: 0.05rem;
+            }
+          }
+          .price {
+            text-align: left;
+            font-size: 0.12rem;
+            line-height: 0.3rem;
+            span:nth-child(1) {
+              margin-left: -0.02rem;
+              margin-right: 0.02rem;
+            }
           }
         }
         .van-list__finished-text {

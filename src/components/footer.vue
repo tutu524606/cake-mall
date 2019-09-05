@@ -1,19 +1,58 @@
 <template>
   <div class="footer">
     <van-tabbar v-model="active">
-      <van-tabbar-item icon="good-job-o">精选</van-tabbar-item>
-      <van-tabbar-item icon="shop-collect-o">蛋糕</van-tabbar-item>
+      <van-tabbar-item :icon="item.icon" v-for="(item,i) in downMenus" :key="i" @touchstart.native.stop="changeMenu(item)" @click.native.stop="changeMenu(item)">{{item.menuName}}</van-tabbar-item>
+      <!-- <van-tabbar-item icon="shop-collect-o">蛋糕</van-tabbar-item>
       <van-tabbar-item icon="fire-o">小食</van-tabbar-item>
-      <van-tabbar-item icon="shopping-cart-o">购物车</van-tabbar-item>
+      <van-tabbar-item icon="shopping-cart-o">购物车</van-tabbar-item> -->
     </van-tabbar>
   </div>
 </template>
 <script>
+import { mapActions, mapMutations } from "vuex";
 export default {
   data() {
     return {
-      active: 0
+      active: 2,
+      downMenus: [
+        {
+          id: "0",
+          menuName: "精选",
+          icon: "good-job-o"
+        },
+        {
+          id: "1",
+          menuName: "蛋糕",
+          icon: "shop-collect-o"
+        },
+        {
+          id: "2",
+          menuName: "小食",
+          icon: "fire-o"
+        },
+        {
+          id: "3",
+          menuName: "购物车",
+          icon: "shopping-cart-o"
+        }
+      ]
     };
+  },
+  computed: {
+    currentMenu() {
+      return this.$store.state.footer.currentMenu[0]
+        ? this.$store.state.footer.currentMenu[0]
+        : "";
+    }
+  },
+  mounted() {
+    this.active = this.currentMenu ? this.currentMenu.id : 2;
+  },
+  methods: {
+    ...mapActions(["changeMenuItem"]),
+    changeMenu(item) {
+      this.changeMenuItem(item);
+    }
   }
 };
 </script>  
