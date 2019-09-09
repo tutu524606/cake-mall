@@ -6,21 +6,9 @@
         @close="searchPopClose"
         >
            <div>
-               <div>
-                   <p><i class="iconfont icondangao1"></i></p>
-                   <p>最新活动</p>
-               </div>
-               <div>
-                   <p><i class="iconfont icongerenzhongxinwoderenwubiaozhuntouxianxing"></i></p>
-                   <p>个人中心</p>
-               </div>
-               <div>
-                   <p><i class="iconfont iconguanyuwomen"></i></p>
-                   <p>关于我们</p>
-               </div>
-               <div>
-                   <p><i class="iconfont iconpeisongfanweichaxun-copy"></i></p>
-                   <p>配送地址</p>
+               <div v-for="(item,i) in menus" :key="i">
+                   <p><i :class="'iconfont '+ item.icon"></i></p>
+                   <p>{{item.name}}</p>
                </div>
            </div>
         </van-popup>
@@ -29,7 +17,30 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      menus: [
+        {
+          name: "最新活动",
+          icon: "icondangao1",
+          path: ""
+        },
+        {
+          name: "个人中心",
+          icon: "icongerenzhongxinwoderenwubiaozhuntouxianxing",
+          path: ""
+        },
+        {
+          name: "关于我们",
+          icon: "iconguanyuwomen",
+          path: ""
+        },
+        {
+          name: "配送地址",
+          icon: "iconpeisongfanweichaxun-copy",
+          path: ""
+        }
+      ]
+    };
   },
   methods: {
     searchPopClose() {}
