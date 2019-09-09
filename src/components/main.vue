@@ -2,7 +2,7 @@
   <div class="primary-main">
     <Header></Header>
     <Container></Container>
-    <Footer></Footer>
+    <Footer v-if="$route.path != '/shipAddr'"></Footer>
     <Choice></Choice>
   </div>
 </template>

@@ -43,7 +43,15 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/1.jpg")
+          imgUrl: require("@/assets/images/goods/cake/1.jpg")
+        },
+        {
+          goodName: "花样·年华",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/2.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -51,7 +59,7 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/2.jpg")
+          imgUrl: require("@/assets/images/goods/cake/3.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -59,7 +67,7 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/3.jpg")
+          imgUrl: require("@/assets/images/goods/cake/4.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -67,7 +75,7 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/4.jpg")
+          imgUrl: require("@/assets/images/goods/cake/5.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -75,7 +83,7 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/5.jpg")
+          imgUrl: require("@/assets/images/goods/cake/6.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -83,7 +91,7 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/6.jpg")
+          imgUrl: require("@/assets/images/goods/cake/7.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -91,7 +99,7 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/7.jpg")
+          imgUrl: require("@/assets/images/goods/cake/8.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -99,7 +107,7 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/8.jpg")
+          imgUrl: require("@/assets/images/goods/cake/9.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -107,7 +115,7 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/9.jpg")
+          imgUrl: require("@/assets/images/goods/cake/10.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -115,7 +123,7 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/10.jpg")
+          imgUrl: require("@/assets/images/goods/cake/11.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -123,7 +131,7 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/11.jpg")
+          imgUrl: require("@/assets/images/goods/cake/12.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -131,7 +139,7 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/12.jpg")
+          imgUrl: require("@/assets/images/goods/cake/13.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -139,7 +147,16 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/13.jpg")
+          imgUrl: require("@/assets/images/goods/cake/14.jpg")
+        },
+
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/15.jpg")
         },
         {
           goodName: "雅月·清境",
@@ -147,7 +164,143 @@ export default {
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
-          imgUrl: require("@/assets/images/goods/14.jpg")
+          imgUrl: require("@/assets/images/goods/cake/16.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/17.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/18.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/19.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/20.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/21.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/22.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/23.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/24.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/25.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/26.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/27.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/28.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/29.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/30.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/31.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/32.jpg")
+        },
+        {
+          goodName: "雅月·清境",
+          mark: "新品",
+          isCart: false,
+          price: "298.00",
+          englishDes: "Croissant français",
+          imgUrl: require("@/assets/images/goods/cake/33.jpg")
         }
       ],
       isLoading: false,
@@ -172,7 +325,7 @@ export default {
       .then(() => {
         setTimeout(() => {
           this.toast.clear();
-        }, 400);
+        }, 1000);
       });
   },
   methods: {

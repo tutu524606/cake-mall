@@ -11,7 +11,23 @@ const children = [{
         name: "home",
         component: resolve => require(["@/pages/home/home"], resolve),
         meta: {
-            title: "首页"
+            title: "小食"
+        }
+    },
+    {
+        path: "/cake",
+        name: "cake",
+        component: resolve => require(["@/pages/cake/cake"], resolve),
+        meta: {
+            title: "蛋糕"
+        }
+    },
+    {
+        path: "/cart",
+        name: "cart",
+        component: resolve => require(["@/pages/cart/cart"], resolve),
+        meta: {
+            title: "购物车"
         }
     }
 ]
