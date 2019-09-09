@@ -40,6 +40,8 @@ Vue.use(VueLazyLoad, {
 import http from './assets/js/http'
 Vue.use(http);
 
+// 引入字体图标
+import './assets/css/font/iconfont.css'
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

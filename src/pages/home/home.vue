@@ -30,8 +30,7 @@
     </section>
 </template>
 <script>
-import { Row, Col, Image, Toast } from "vant";
-import { PullRefresh } from "vant";
+import { Row, Col, Image, Toast, PullRefresh } from "vant";
 export default {
   data() {
     return {

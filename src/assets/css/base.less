@@ -133,3 +133,40 @@ a{ color: #333;}
         font-size: 0.14rem;
     }
 }
+
+// 弹框样式
+.van-dialog {
+  .van-dialog__header {
+    font-size: 0.16rem;
+    font-weight: bolder;
+    padding-top: 0;
+    line-height: 0.5rem;
+    margin-top: 0.1rem;
+    color: #444;
+  }
+  .van-dialog__content {
+    .van-dialog__message--has-title {
+      padding: 0;
+      font-size: 0.14rem;
+      line-height: 0.24rem;
+    }
+  }
+  .van-dialog__footer--buttons {
+    margin-top: 0.1rem;
+    .van-button {
+      border: 0;
+      line-height: 0.5rem;
+      height: 0.5rem;
+      font-size: 0.16rem;
+    }
+    .van-dialog__cancel {
+      background: rgba(135, 122, 113, 1);
+      color: #fff;
+      border-radius: 0;
+    }
+    .van-dialog__confirm {
+      background-color: yellow;
+      color: #000;
+    }
+  }
+}
