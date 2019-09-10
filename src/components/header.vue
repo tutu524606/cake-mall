@@ -2,8 +2,9 @@
   <header class="header">
     <van-row>
       <van-col span="8" @touchstart.native.stop="backToSelectCity">
-        <van-icon name="location-o" />
-        <span>{{currentCity ? currentCity.city : '配送至'}}</span>
+        <van-icon name="location-o" v-if="$route.path != '/cart'" />
+        <span v-if="$route.path != '/cart'">{{currentCity ? currentCity.city : '配送至'}}</span>
+        <van-icon name="arrow-left" v-if="$route.path == '/cart'" class="back"/>
       </van-col>
       <van-col span="8" class="logo">
         <img :src="logoData" alt />
@@ -33,7 +34,7 @@ export default {
       searchIcon: "search",
       fontSizeCls: "",
       currentView: "",
-      iconName: "shopping-cart-o"
+      iconName: "search"
     };
   },
   components: {
@@ -51,7 +52,6 @@ export default {
   methods: {
     searchView() {
       if (this.$route.path == "/cart") return;
-      this.iconName = this.cancelShow ? "search" : "cancel";
       this.cancelShow = !this.cancelShow;
       this.currentView = Search;
     },
@@ -74,21 +74,26 @@ export default {
       });
     },
     backToSelectCity() {
-      this.$router.push({
-        path: "/shipAddr"
-      });
+      if (this.$route.path != "/cart") {
+        this.$router.push({
+          path: "/shipAddr"
+        });
+      } else {
+        this.$router.back();
+      }
     }
   },
   watch: {
-    currentCity(value) {
-      console.log(this.$route, value, "监听");
-    },
+    currentCity(value) {},
     "$route.path": {
       deep: true,
       handler(value) {
-        console.log(value, "路由监听");
         this.iconName = value == "/cart" ? "shopping-cart-o" : "search";
       }
+    },
+    cancelShow(value) {
+      if (this.$route.path != "/cart" && this.currentView != Active)
+        this.iconName = !value ? "search" : "cancel";
     }
   }
 };
@@ -120,6 +125,13 @@ export default {
         text-align: right;
         font-weight: bolder;
         padding-left: 0.15rem;
+      }
+      i.back {
+        font-size: 0.26rem;
+        font-weight: normal;
+        /* height: 0.66rem; */
+        display: inline-block;
+        margin-left: -0.6rem;
       }
       span {
         text-align: left;

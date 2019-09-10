@@ -1,8 +1,8 @@
 <template>
   <div class="primary-main">
     <Header></Header>
-    <Container></Container>
-    <Footer v-if="$route.path != '/shipAddr'"></Footer>
+    <Container ref="container"></Container>
+    <Footer v-if="$route.path != '/shipAddr'" ref="footer"></Footer>
     <Choice></Choice>
   </div>
 </template>
@@ -20,7 +20,9 @@ export default {
     if (window.sessionStorage.getItem("currentCity"))
       this.changeCity(JSON.parse(window.sessionStorage.getItem("currentCity")));
     this.$router.push({
-      path: window.sessionStorage.getItem("currentCity") ? "/home" : "/shipAddr"
+      path: window.sessionStorage.getItem("currentCity")
+        ? this.$route.path == "/" ? "/home" : this.$route.path
+        : "/shipAddr"
     });
   },
   components: {

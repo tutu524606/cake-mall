@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <van-tabbar v-model="active">
-      <van-tabbar-item :icon="item.icon" v-for="(item,i) in downMenus" :key="i" @click.native.stop="changeMenu(item)" :to="item.id == '0' ? $route.path : item.path">{{item.menuName}}</van-tabbar-item>
+      <van-tabbar-item :icon="item.icon" v-for="(item,i) in downMenus" :key="i" @touchstart.native.prevent.stop="changeMenu(item)">{{item.menuName}}</van-tabbar-item>
       <!-- <van-tabbar-item icon="shop-collect-o">蛋糕</van-tabbar-item>
       <van-tabbar-item icon="fire-o">小食</van-tabbar-item>
       <van-tabbar-item icon="shopping-cart-o">购物车</van-tabbar-item> -->
@@ -16,25 +16,25 @@ export default {
       active: 2,
       downMenus: [
         {
-          id: "0",
+          id: 0,
           menuName: "精选",
           icon: "good-job-o",
           path: ""
         },
         {
-          id: "1",
+          id: 1,
           menuName: "蛋糕",
           icon: "shop-collect-o",
           path: "/cake"
         },
         {
-          id: "2",
+          id: 2,
           menuName: "小食",
           icon: "fire-o",
           path: "/home"
         },
         {
-          id: "3",
+          id: 3,
           menuName: "购物车",
           icon: "shopping-cart-o",
           path: "/cart"
@@ -53,9 +53,31 @@ export default {
     this.active = this.currentMenu ? this.currentMenu.id : 2;
   },
   methods: {
-    ...mapActions(["changeMenuItem"]),
+    ...mapActions(["changeMenuItem", "changeChoice"]),
     changeMenu(item) {
       this.changeMenuItem(item);
+      if (item.id != "0") {
+        this.$router.push({
+          path: item.path
+        });
+      }
+    }
+  },
+  watch: {
+    currentMenu(value) {
+      if (value != this.downMenus[0]) {
+        this.active = value.id;
+      }
+    },
+    "$route.path": {
+      deep: true,
+      handler(value) {
+        this.changeMenuItem(
+          this.downMenus.filter(v => {
+            return v.path == value;
+          })[0]
+        );
+      }
     }
   }
 };

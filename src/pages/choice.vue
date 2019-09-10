@@ -6,12 +6,12 @@
     @close="popClose"
     :style="{ width: '50%',height: '100%' }">
       <div class="all-cake">
-        <p><span>所有蛋糕</span><span>35</span></p>
+        <p @touchstart.prevent.stop="toMenu('/cake')"><span>所有蛋糕</span><span>35</span></p>
       </div>
       <van-divider />
       <div class="cake-category">
         <ul>
-          <li v-for="(item,i) in cakeCategory" :key="i">
+          <li v-for="(item,i) in cakeCategory" :key="i" @touchstart.prevent.stop="filterGoods(i)">
             <span><i :class="'iconfont ' + item.icon"></i></span>
             <span>{{item.name}}</span>
             <span><i class="iconfont icondayuhao"></i></span>
@@ -19,11 +19,11 @@
         </ul>
       </div>
       <div class="all-cake all-food">
-        <p><span>所有小食</span><span>14</span></p>
+        <p  @touchstart.prevent.stop="toMenu('/home')"><span>所有小食</span><span>14</span></p>
       </div>
       <van-divider />
       <div class="all-cake all-food">
-        <p><span>所有配件</span><span>3</span></p>
+        <p @touchstart.prevent.stop="toMenu('/cake',true)"><span>所有配件</span><span>3</span></p>
       </div>
       <van-divider />
     </van-popup>
@@ -31,10 +31,37 @@
 </template>
 <script>
 import { Popup } from "vant";
+import { mapActions, mapMutations } from "vuex";
 export default {
   data() {
     return {
       show: false,
+      downMenus: [
+        {
+          id: 0,
+          menuName: "精选",
+          icon: "good-job-o",
+          path: ""
+        },
+        {
+          id: 1,
+          menuName: "蛋糕",
+          icon: "shop-collect-o",
+          path: "/cake"
+        },
+        {
+          id: 2,
+          menuName: "小食",
+          icon: "fire-o",
+          path: "/home"
+        },
+        {
+          id: 3,
+          menuName: "购物车",
+          icon: "shopping-cart-o",
+          path: "/cart"
+        }
+      ],
       cakeCategory: [
         {
           name: "拿破仑",
@@ -99,8 +126,39 @@ export default {
     }
   },
   methods: {
+    ...mapActions(["changeMenuItem", "changeChoice"]),
     popClose() {
-      console.log("ooo");
+      // this.changeMenuItem(
+      //   this.downMenus.filter(v => {
+      //     return v.path == this.$route.path;
+      //   })[0]
+      // );
+    },
+    filterGoods(index) {
+      Promise.resolve()
+        .then(() => {
+          this.$router.push({
+            path: "/cake"
+          });
+        })
+        .then(() => {
+          this.show = false;
+          this.$parent.$refs.footer.active = "";
+          this.changeChoice(index * 1 + 1);
+        });
+    },
+    toMenu(path, flag) {
+      this.$router.push({
+        path: path
+      });
+      this.show = false;
+      if (this.$parent.$refs.container.$children[0].fiterGoods) {
+        if (flag) {
+          this.$parent.$refs.container.$children[0].fiterGoods("", flag);
+        } else {
+          this.$parent.$refs.container.$children[0].fiterGoods("");
+        }
+      }
     }
   },
   mounted() {},

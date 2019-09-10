@@ -4,6 +4,10 @@
             <div class="cart-bg"></div>
             <div class="cart-empty-text"><span>您的购物车还是空的，</span><span><a href="">赶紧行动吧！</a></span></div>
         </div>
+        <div class="recommend">
+          <p>为您推荐</p>
+        </div>
+        <div class="shop-again"><van-button type="primary" to="/home">再逛逛</van-button></div>
     </div>
 </template>
 <script>
@@ -38,6 +42,29 @@ export default {
       line-height: 0.5rem;
       font-size: 0.15rem;
       color: #fff;
+    }
+  }
+  .recommend {
+    > p {
+      line-height: 0.4rem;
+      font-weight: bolder;
+      text-indent: 0.2rem;
+    }
+  }
+  .shop-again {
+    position: fixed;
+    bottom: 0rem;
+    z-index: 999;
+    .van-button--primary {
+      line-height: 0.46rem;
+      width: 100vw;
+      height: 0.46rem;
+      font-size: 0.2rem;
+      letter-spacing: 0.01rem;
+      border-radius: 0;
+      background-color: yellow;
+      border-color: yellow;
+      color: #000;
     }
   }
 }

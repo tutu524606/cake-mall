@@ -37,24 +37,27 @@ export default {
       list: [],
       goodsList: [
         {
-          goodName: "雅月·清境",
-          mark: "新品",
+          goodName: "蓝莓轻乳拿破仑",
+          mark: "金牌",
+          type: "1",
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
           imgUrl: require("@/assets/images/goods/1.jpg")
         },
         {
-          goodName: "雅月·清境",
-          mark: "新品",
+          goodName: "黑森林拿破仑",
+          mark: "",
+          type: "1",
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",
           imgUrl: require("@/assets/images/goods/2.jpg")
         },
         {
-          goodName: "雅月·清境",
-          mark: "新品",
+          goodName: "经典香草拿破仑",
+          mark: "",
+          type: "1",
           isCart: false,
           price: "298.00",
           englishDes: "Croissant français",

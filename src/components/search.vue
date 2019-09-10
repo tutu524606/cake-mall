@@ -12,7 +12,7 @@
                 </van-cell-group>
                 <p><span v-for="(item,i) in tags" :key="i">{{item}}</span></p>
             </div>
-            <van-button type="primary">搜索</van-button>
+            <van-button type="primary" @touchstart.native.prevent.stop="search">搜索</van-button>
         </van-popup>
     </section>
     
@@ -36,6 +36,29 @@ export default {
     },
     blur() {
       this.placeholder = "请输入关键词";
+    },
+    search() {
+      // this.$parent.$parent.$refs.container.$children[0].fiterGoods(
+      //   undefined,
+      //   this.searchContent
+      // );
+      Promise.resolve()
+        .then(() => {
+          if (!this.$parent.$parent.$refs.container.$children[0].fiterGoods)
+            this.$router.push({
+              name: "cake",
+              params: {
+                searchContent: this.searchContent
+              }
+            });
+        })
+        .then(() => {
+          this.$parent.$parent.$refs.container.$children[0].fiterGoods(
+            undefined,
+            this.searchContent
+          );
+          this.$parent.cancelShow = false;
+        });
     }
   }
 };
