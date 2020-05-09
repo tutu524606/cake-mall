@@ -8,7 +8,7 @@ Vue.config.productionTip = false
 // 引入vuex
 import store from './store/index'
 
-// 引入vant123
+// 引入vant123456
 import Vant from 'vant'
 import 'vant/lib/index.css'
 Vue.use(Vant)
